@@ -1,0 +1,26 @@
+schema_version = "1.0.0"
+
+id = "faceit"
+version = "2.3.51"
+name = "Faceit"
+tagline = "Facial Expressions And Performance Capture"
+maintainer = "Fynn Braren <fynn.braren@posteo.de>"
+type = "add-on"
+
+website = "https://faceit-doc.readthedocs.io/en/latest/"
+
+tags = ["3D View", "Animation", "Rigging"]
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+copyright = [
+  "2020 Fynn Braren",
+]
+
+[permissions]
+network = "[Optional] Need to receive motion capture data from various capturing apps. Works offline as well."
+files = "[Optional] Import various motion capture formats from/to disk"
