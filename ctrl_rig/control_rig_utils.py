@@ -304,7 +304,9 @@ def create_eye_lookat_driver_mechanics(rig):
         t.bone_target = 'c_SwitchLookAt_slider'
         t.transform_space = 'LOCAL_SPACE'
         t.transform_type = 'LOC_Y'
-        dr.expression = f'(var/{mcp_max.x} + var_1/{mcp_L_max.x}) * (1-(switch/{switch_max.y}))'
+        #dr.expression = f'(var/{mcp_max.x} + var_1/{mcp_L_max.x}) * (1-(switch/{switch_max.y}))'
+        # xx: change vertical rotation range to (pi / 8)
+        dr.expression = f'(pi / 8) * (var/{mcp_max.x} + var_1/{mcp_L_max.x}) * (1-(switch/{switch_max.y}))'
         # Add Z rotation driver
         driver = rig.driver_add(path, 2)
         dr = driver.driver
@@ -334,7 +336,9 @@ def create_eye_lookat_driver_mechanics(rig):
         t.bone_target = 'c_SwitchLookAt_slider'
         t.transform_space = 'LOCAL_SPACE'
         t.transform_type = 'LOC_Y'
-        dr.expression = f'(var/{mcp_max.y} + var_1/{mcp_L_max.y}) * (1-(switch/{switch_max.y}))'
+        #dr.expression = f'(var/{mcp_max.y} + var_1/{mcp_L_max.y}) * (1-(switch/{switch_max.y}))'
+        # xx: change horizontal rotation range to (pi / 6)
+        dr.expression = f'(pi / 6) * (var/{mcp_max.y} + var_1/{mcp_L_max.y}) * (1-(switch/{switch_max.y}))'
         # TODO: The ranges are still wrong.
         # Nach oben: etwa 25 bis 35 Grad
         # Nach unten: etwa 30 bis 45 Grad

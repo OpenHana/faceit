@@ -266,7 +266,7 @@ def get_eye_2d_driver_dict(control_rig):
     driver_dict = {}
     mocap2dtarget = control_rig.pose.bones.get('c_LookAt2D_slider2d')
     driver_dict['eyeLookUpLeft'] = {
-        'expression': 'max(0, min(amp, wrld))',
+        'expression': 'max(0, min(amp, wrld / (pi / 8)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -284,7 +284,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookDownLeft'] = {
-        'expression': '-min(0,max(-amp,wrld))',
+        'expression': '-min(0,max(-amp,wrld / (pi / 8)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -302,7 +302,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookInLeft'] = {
-        'expression': '-min(0,max(-amp,wrld))',
+        'expression': '-min(0,max(-amp,wrld / (pi / 6)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -320,7 +320,7 @@ def get_eye_2d_driver_dict(control_rig):
         'range': 'neg',
     }
     driver_dict['eyeLookOutLeft'] = {
-        'expression': 'max(0,min(amp,wrld))',
+        'expression': 'max(0,min(amp,wrld / (pi / 6)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -338,7 +338,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookUpRight'] = {
-        'expression': 'max(0, min(amp, wrld))',
+        'expression': 'max(0, min(amp, wrld / (pi / 8)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -356,7 +356,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookDownRight'] = {
-        'expression': '-min(0,max(-amp,wrld))',
+        'expression': '-min(0,max(-amp,wrld / (pi / 8)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -374,7 +374,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookInRight'] = {
-        'expression': 'max(0,min(amp,wrld))',
+        'expression': 'max(0,min(amp,wrld / (pi / 6)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
@@ -392,7 +392,7 @@ def get_eye_2d_driver_dict(control_rig):
         'overwrite_expression': False,
     }
     driver_dict['eyeLookOutRight'] = {
-        'expression': '-min(0,max(-amp,wrld))',
+        'expression': '-min(0,max(-amp,wrld / (pi / 6)))',
         'variables': {
             'var': {
                 'bone_name': f'{mocap2dtarget.name}',
